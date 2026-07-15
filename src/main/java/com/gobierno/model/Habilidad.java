@@ -1,5 +1,6 @@
 package com.gobierno.model;
 
+import jakarta.persistence.Column;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
@@ -14,6 +15,7 @@ public class Habilidad {
     @JsonBackReference
     private ProcesoCobit proceso;
 
+    @Column(columnDefinition = "TEXT")
     private String nombreHabilidad;
     private String documentacionRelacionada;
     private String referenciaEspecifica;
