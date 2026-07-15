@@ -14,7 +14,7 @@ public class Cultura {
     @JsonBackReference
     private ProcesoCobit proceso;
 
-    @Column(columnDefinition = "TEXT", length = 500)
+    @Column(columnDefinition = "TEXT")
     private String elementoCultural;
     private String documentacionRelacionada;
     private String referenciaEspecifica;
