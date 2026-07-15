@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Cultura {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCultura;
-
+//si
     @ManyToOne
     @JoinColumn(name = "id_proceso")
     @JsonBackReference
