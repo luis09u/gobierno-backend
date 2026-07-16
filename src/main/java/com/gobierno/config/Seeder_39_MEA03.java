@@ -108,7 +108,7 @@ public class Seeder_39_MEA03 implements CommandLineRunner {
         mea03.setComponenteD_Habilidades(Arrays.asList(hab1));
 
         // ==========================================
-        // COMPONENTE E: POLÍTICAS INSTITUCIONALES
+        // COMPONENTE E: POLÍTICAS INSTITUCIONALES SI
         // ==========================================
         Politica pol1 = new Politica(); pol1.setProceso(mea03); pol1.setTituloPolitica("Directiva Corporativa de Cero Tolerancia a la Infracción Legal"); pol1.setDescripcionPolitica("Mandato institucional inflexible que prohíbe el lanzamiento comercial de cualquier plataforma tecnológica, modelo de vehículo conectado o servicio digital si este no cuenta con un dictamen jurídico favorable que certifique su cumplimiento absoluto con las leyes locales e internacionales. Esta política subordina las metas de ventas a las obligaciones regulatorias."); pol1.setDocumentacionRelacionada("Estatuto Institucional de Conducta Legal y Ética Empresarial"); pol1.setReferenciaEspecifica("Sección: Requisitos Legales Obligatorios para Nuevos Mercados");
 
