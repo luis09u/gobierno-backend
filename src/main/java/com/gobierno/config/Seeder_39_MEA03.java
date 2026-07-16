@@ -103,7 +103,7 @@ public class Seeder_39_MEA03 implements CommandLineRunner {
         // ==========================================
         // COMPONENTE D: HABILIDADES PROFESIONALES
         // ==========================================
-        Habilidad hab1 = new Habilidad(); hab1.setProceso(mea03); hab1.setNombreHabilidad("Derecho Informático y Gestión de Auditorías Regulatorias Externas"); hab1.setDocumentacionRelacionada("Reglamento General de Protección de Datos emitido por las autoridades europeas"); hab1.setReferenciaEspecifica("De este cuerpo normativo internacional se extrae explícitamente la obligación de incorporar la privacidad desde el diseño original de los sistemas informáticos, garantizando que el cumplimiento legal no sea un parche administrativo posterior, sino un pilar fundamental en el desarrollo de la tecnología corporativa.");
+        Habilidad hab1 = new Habilidad(); hab1.setProceso(mea03); hab1.setNombreHabilidad("Derecho Informático y Gestión de Auditorías Regulatorias Externas"); hab1.setDocumentacionRelacionada("Reglamento General de Protección de Datos emitido por las autoridades europeas (RGPD) Reglamento UE 2016/679"); hab1.setReferenciaEspecifica("De este cuerpo normativo internacional se extrae explícitamente la obligación de incorporar la privacidad desde el diseño original de los sistemas informáticos, garantizando que el cumplimiento legal no sea un parche administrativo posterior, sino un pilar fundamental en el desarrollo de la tecnología corporativa.");
 
         mea03.setComponenteD_Habilidades(Arrays.asList(hab1));
 

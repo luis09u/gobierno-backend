@@ -103,7 +103,7 @@ public class Seeder_34_DSS04 implements CommandLineRunner {
         // ==========================================
         // COMPONENTE D: HABILIDADES PROFESIONALES
         // ==========================================
-        Habilidad hab1 = new Habilidad(); hab1.setProceso(dss04); hab1.setNombreHabilidad("Estructuración de Resiliencia Operacional y Gestión Integral de Crisis"); hab1.setDocumentacionRelacionada("Norma Internacional de Gestión de la Continuidad del Negocio emitida bajo el código veintidós mil trescientos uno"); hab1.setReferenciaEspecifica("De este estándar normativo se extrae explícitamente el cálculo preciso de los tiempos máximos tolerables de interrupción y los objetivos de punto de recuperación, herramientas matemáticas fundamentales para dictaminar cuánta información puede perder la empresa sin entrar en quiebra.");
+        Habilidad hab1 = new Habilidad(); hab1.setProceso(dss04); hab1.setNombreHabilidad("Estructuración de Resiliencia Operacional y Gestión Integral de Crisis"); hab1.setDocumentacionRelacionada("Norma Internacional de Gestión de la Continuidad del Negocio (ISO 22301)"); hab1.setReferenciaEspecifica("De este estándar normativo se extrae explícitamente el cálculo preciso de los tiempos máximos tolerables de interrupción y los objetivos de punto de recuperación, herramientas matemáticas fundamentales para dictaminar cuánta información puede perder la empresa sin entrar en quiebra.");
 
         dss04.setComponenteD_Habilidades(Arrays.asList(hab1));
 

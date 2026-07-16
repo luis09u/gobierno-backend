@@ -124,7 +124,7 @@ public class Seeder_22_BAI03 implements CommandLineRunner {
         // ==========================================
         // COMPONENTE G: SERVICIOS Y HERRAMIENTAS
         // ==========================================
-        Servicio serv1 = new Servicio(); serv1.setProceso(bai03); serv1.setNombreServicioHerramienta("Entornos Integrados de Desarrollo y Repositorios Corporativos de Código (Ej. GitLab, GitHub Enterprise)");
+        Servicio serv1 = new Servicio(); serv1.setProceso(bai03); serv1.setNombreServicioHerramienta("Entornos Integrados de Desarrollo y Repositorios Corporativos de Código (GitLab, GitHub Enterprise)");
         Servicio serv2 = new Servicio(); serv2.setProceso(bai03); serv2.setNombreServicioHerramienta("Plataformas Automáticas de Análisis Estático para la Detección de Fallas en la Construcción");
 
         bai03.setComponenteG_Servicios(Arrays.asList(serv1, serv2));

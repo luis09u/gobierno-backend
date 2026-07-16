@@ -103,7 +103,7 @@ public class Seeder_37_MEA01 implements CommandLineRunner {
         // ==========================================
         // COMPONENTE D: HABILIDADES PROFESIONALES
         // ==========================================
-        Habilidad hab1 = new Habilidad(); hab1.setProceso(mea01); hab1.setNombreHabilidad("Medición del Rendimiento y Análisis de Datos Corporativos"); hab1.setDocumentacionRelacionada("Marco Internacional de Gestión de la Calidad regulado bajo la normativa nueve mil uno"); hab1.setReferenciaEspecifica("De este marco de estandarización mundial se adopta directamente el principio de auditoría basada en evidencias objetivas, estableciendo que ninguna evaluación de desempeño puede sustentarse en percepciones subjetivas, exigiendo en su lugar trazabilidad numérica y demostrable para cada conclusión gerencial.");
+        Habilidad hab1 = new Habilidad(); hab1.setProceso(mea01); hab1.setNombreHabilidad("Medición del Rendimiento y Análisis de Datos Corporativos"); hab1.setDocumentacionRelacionada("Marco Internacional de Gestión de la Calidad regulado bajo la normativa ISO 9001"); hab1.setReferenciaEspecifica("De este marco de estandarización mundial se adopta directamente el principio de auditoría basada en evidencias objetivas, estableciendo que ninguna evaluación de desempeño puede sustentarse en percepciones subjetivas, exigiendo en su lugar trazabilidad numérica y demostrable para cada conclusión gerencial.");
 
         mea01.setComponenteD_Habilidades(Arrays.asList(hab1));
 

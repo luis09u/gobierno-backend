@@ -103,7 +103,7 @@ public class Seeder_35_DSS05 implements CommandLineRunner {
         // ==========================================
         // COMPONENTE D: HABILIDADES PROFESIONALES
         // ==========================================
-        Habilidad hab1 = new Habilidad(); hab1.setProceso(dss05); hab1.setNombreHabilidad("Defensa Cibernética y Criptografía Aplicada a Redes Complejas"); hab1.setDocumentacionRelacionada("Estándar Internacional de Seguridad de la Información veintisiete mil uno dictado por la Organización Internacional de Normalización"); hab1.setReferenciaEspecifica("De esta normativa mundial se rescata detalladamente el modelo de mejora continua para la gestión de controles criptográficos, permitiendo estructurar defensas perimetrales sólidas que evolucionan al mismo ritmo que las amenazas externas.");
+        Habilidad hab1 = new Habilidad(); hab1.setProceso(dss05); hab1.setNombreHabilidad("Defensa Cibernética y Criptografía Aplicada a Redes Complejas"); hab1.setDocumentacionRelacionada("Estándar Internacional de Seguridad de la Información ISO 27001 dictado por la Organización Internacional de Normalización"); hab1.setReferenciaEspecifica("De esta normativa mundial se rescata detalladamente el modelo de mejora continua para la gestión de controles criptográficos, permitiendo estructurar defensas perimetrales sólidas que evolucionan al mismo ritmo que las amenazas externas.");
 
         dss05.setComponenteD_Habilidades(Arrays.asList(hab1));
 

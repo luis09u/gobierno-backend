@@ -59,7 +59,7 @@ public class Seeder_16_APO11 implements CommandLineRunner {
         pract01.setNombrePractica("Establecer un sistema de gestión de calidad");
         pract01.setDescripcionPractica("Definir los estándares, métricas y herramientas obligatorias que evaluarán si el código programado por los ingenieros es apto para producción.");
         Actividad a1_1 = new Actividad(); a1_1.setPractica(pract01); a1_1.setDescripcionActividad("Integrar plataformas de análisis de código automatizado para detectar errores humanos antes de que el software sea aprobado."); a1_1.setNivelCapacidadEsperado(3); a1_1.setCalificacionActual("N");
-        Actividad a1_2 = new Actividad(); a1_2.setPractica(pract01); a1_2.setDescripcionActividad("Diseñar una matriz de pruebas que cubra el cien por ciento de las funcionalidades críticas del vehículo (frenos automáticos, asistencia de carril)."); a1_2.setNivelCapacidadEsperado(4); a1_2.setCalificacionActual("N");
+        Actividad a1_2 = new Actividad(); a1_2.setPractica(pract01); a1_2.setDescripcionActividad("Diseñar una matriz de pruebas que cubra el cien por ciento de las funcionalidades críticas del vehículo como frenos automáticos o asistencia de carril."); a1_2.setNivelCapacidadEsperado(4); a1_2.setCalificacionActual("N");
         pract01.setActividades(Arrays.asList(a1_1, a1_2));
 
         PracticaCobit pract02 = new PracticaCobit();

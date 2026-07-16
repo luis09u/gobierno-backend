@@ -40,7 +40,7 @@ public class Seeder_07_APO02 implements CommandLineRunner {
 
         apo02.setMetasAlineamiento("AG05: Entrega de servicios de TI acorde a los requisitos del negocio.\nAG09: Entrega de programas que proporcionen beneficios a tiempo, dentro del presupuesto y cumpliendo los requisitos.");
         apo02.setMetasEmpresariales("EG01: Portafolio de productos y servicios competitivos.\nEG05: Cultura de innovación orientada al cliente.");
-        apo02.setMetricasModelo("Métrica 1: Porcentaje de iniciativas estratégicas de TI (Ej. despliegue 5G en vehículos) alineadas con la estrategia corporativa.\nMétrica 2: Nivel de madurez de la arquitectura empresarial TO-BE alcanzado en el año fiscal.");
+        apo02.setMetricasModelo("Métrica 1: Porcentaje de iniciativas estratégicas de TI alineadas con la estrategia corporativa.\nMétrica 2: Nivel de madurez de la arquitectura empresarial TO-BE alcanzado en el año fiscal.");
 
         // ==========================================
         // COMPONENTE A: PROCESOS
@@ -123,8 +123,8 @@ public class Seeder_07_APO02 implements CommandLineRunner {
         // ==========================================
         // COMPONENTE G: SERVICIOS E INFRAESTRUCTURA
         // ==========================================
-        Servicio serv1 = new Servicio(); serv1.setProceso(apo02); serv1.setNombreServicioHerramienta("Plataformas de Gestión Estratégica (Ej. Aha!, Jira Align)");
-        Servicio serv2 = new Servicio(); serv2.setProceso(apo02); serv2.setNombreServicioHerramienta("Herramientas de Modelado Empresarial (Ej. ArchiMate, BizzDesign)");
+        Servicio serv1 = new Servicio(); serv1.setProceso(apo02); serv1.setNombreServicioHerramienta("Plataformas de Gestión Estratégica (Aha!, Jira Align)");
+        Servicio serv2 = new Servicio(); serv2.setProceso(apo02); serv2.setNombreServicioHerramienta("Herramientas de Modelado Empresarial (ArchiMate, BizzDesign)");
 
         apo02.setComponenteG_Servicios(Arrays.asList(serv1, serv2));
 
