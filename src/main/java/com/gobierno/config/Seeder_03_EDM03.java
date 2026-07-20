@@ -31,7 +31,7 @@ public class Seeder_03_EDM03 implements CommandLineRunner {
 
     private void cargarEDM03() {
         // ==========================================
-        // INFORMACIÓN GENERAL
+        // INFORMACIÓN GENERAL (Contexto Toyota / OTA mantenido)
         // ==========================================
         ProcesoCobit edm03 = new ProcesoCobit();
         edm03.setIdProceso("EDM03");
@@ -46,39 +46,51 @@ public class Seeder_03_EDM03 implements CommandLineRunner {
         edm03.setMetricasModelo("Métrica 1: Porcentaje de actualizaciones OTA que pasaron con éxito las pruebas de penetración antes del despliegue.\nMétrica 2: Frecuencia de revisión del apetito de riesgo cibernético por parte del Directorio.");
 
         // ==========================================
-        // COMPONENTE A: PROCESOS
+        // COMPONENTE A: PROCESOS (TEXTOS OFICIALES COBIT 2019)
         // ==========================================
         ComponenteProceso compA = new ComponenteProceso();
         compA.setProceso(edm03);
         compA.setTipoComponente("A");
         compA.setNombreComponente("Procesos");
 
+        // Práctica 01 Oficial
         PracticaCobit pract01 = new PracticaCobit();
         pract01.setComponente(compA);
         pract01.setIdPractica("EDM03.01");
         pract01.setNombrePractica("Evaluar la gestión del riesgo");
-        pract01.setDescripcionPractica("Examinar y juzgar continuamente el efecto del riesgo sobre el valor actual y futuro del proyecto OTA.");
-        Actividad a1_1 = new Actividad(); a1_1.setPractica(pract01); a1_1.setDescripcionActividad("Evaluar escenarios de riesgo cibernético (ej. intercepción de paquetes OTA vía Man-in-the-Middle)."); a1_1.setNivelCapacidadEsperado(3); a1_1.setCalificacionActual("N");
-        Actividad a1_2 = new Actividad(); a1_2.setPractica(pract01); a1_2.setDescripcionActividad("Determinar el nivel de tolerancia al riesgo para la latencia en comunicaciones 5G con los vehículos."); a1_2.setNivelCapacidadEsperado(2); a1_2.setCalificacionActual("N");
-        pract01.setActividades(Arrays.asList(a1_1, a1_2));
+        pract01.setDescripcionPractica("Examinar y juzgar continuamente el efecto del riesgo sobre el valor actual y futuro y el uso de la I&T en la empresa. Considerar si el apetito de riesgo de la empresa es apropiado.");
 
+        Actividad a1_1 = new Actividad(); a1_1.setPractica(pract01); a1_1.setDescripcionActividad("Determinar el nivel del apetito por el riesgo de la I&T de la empresa y asegurar la alineación con el apetito de riesgo general de la empresa."); a1_1.setNivelCapacidadEsperado(2); a1_1.setCalificacionActual("N");
+        Actividad a1_2 = new Actividad(); a1_2.setPractica(pract01); a1_2.setDescripcionActividad("Evaluar y aprobar el apetito y la tolerancia al riesgo que son aceptables para la empresa."); a1_2.setNivelCapacidadEsperado(2); a1_2.setCalificacionActual("N");
+        Actividad a1_3 = new Actividad(); a1_3.setPractica(pract01); a1_3.setDescripcionActividad("Identificar los actores internos y externos clave y sus requerimientos con respecto a la gestión del riesgo."); a1_3.setNivelCapacidadEsperado(3); a1_3.setCalificacionActual("N");
+        Actividad a1_4 = new Actividad(); a1_4.setPractica(pract01); a1_4.setDescripcionActividad("Evaluar el diseño del marco de gobierno para el riesgo y evaluar cómo gestionar e informar sobre dicho riesgo."); a1_4.setNivelCapacidadEsperado(4); a1_4.setCalificacionActual("N");
+        pract01.setActividades(Arrays.asList(a1_1, a1_2, a1_3, a1_4));
+
+        // Práctica 02 Oficial
         PracticaCobit pract02 = new PracticaCobit();
         pract02.setComponente(compA);
         pract02.setIdPractica("EDM03.02");
         pract02.setNombrePractica("Dirigir la gestión del riesgo");
-        pract02.setDescripcionPractica("Dirigir el establecimiento de prácticas de gestión de riesgos para proporcionar una seguridad razonable frente a amenazas vehiculares.");
-        Actividad a2_1 = new Actividad(); a2_1.setPractica(pract02); a2_1.setDescripcionActividad("Exigir la implementación de Arquitectura Zero Trust y cifrado E2EE para todas las conexiones vehículo-nube."); a2_1.setNivelCapacidadEsperado(4); a2_1.setCalificacionActual("N");
-        Actividad a2_2 = new Actividad(); a2_2.setPractica(pract02); a2_2.setDescripcionActividad("Promulgar la política de detener inmediatamente cualquier despliegue OTA si se detecta una brecha crítica de seguridad (Kill Switch)."); a2_2.setNivelCapacidadEsperado(3); a2_2.setCalificacionActual("N");
-        pract02.setActividades(Arrays.asList(a2_1, a2_2));
+        pract02.setDescripcionPractica("Dirigir el establecimiento de prácticas de gestión de riesgos para proporcionar una seguridad razonable de que las prácticas de gestión del riesgo de I&T son apropiadas y no exceden el apetito de riesgo.");
 
+        Actividad a2_1 = new Actividad(); a2_1.setPractica(pract02); a2_1.setDescripcionActividad("Dirigir la implementación de procesos de gestión de riesgos adecuados y alineados con el enfoque de riesgo de la empresa."); a2_1.setNivelCapacidadEsperado(2); a2_1.setCalificacionActual("N");
+        Actividad a2_2 = new Actividad(); a2_2.setPractica(pract02); a2_2.setDescripcionActividad("Dirigir la integración de la gestión del riesgo empresarial y la gestión del riesgo de la I&T."); a2_2.setNivelCapacidadEsperado(2); a2_2.setCalificacionActual("N");
+        Actividad a2_3 = new Actividad(); a2_3.setPractica(pract02); a2_3.setDescripcionActividad("Fomentar una cultura de riesgo proactiva y transparente en toda la empresa desde la alta dirección."); a2_3.setNivelCapacidadEsperado(3); a2_3.setCalificacionActual("N");
+        Actividad a2_4 = new Actividad(); a2_4.setPractica(pract02); a2_4.setDescripcionActividad("Asegurar que los planes de acción para mitigar los riesgos críticos se estén ejecutando de forma efectiva."); a2_4.setNivelCapacidadEsperado(4); a2_4.setCalificacionActual("N");
+        pract02.setActividades(Arrays.asList(a2_1, a2_2, a2_3, a2_4));
+
+        // Práctica 03 Oficial
         PracticaCobit pract03 = new PracticaCobit();
         pract03.setComponente(compA);
         pract03.setIdPractica("EDM03.03");
         pract03.setNombrePractica("Monitorizar la gestión del riesgo");
-        pract03.setDescripcionPractica("Supervisar los objetivos clave de la gestión de riesgos para asegurar el alineamiento con la normativa WP.29.");
-        Actividad a3_1 = new Actividad(); a3_1.setPractica(pract03); a3_1.setDescripcionActividad("Monitorear los reportes del Centro de Operaciones de Seguridad (SOC) integrados con AWS Security Hub."); a3_1.setNivelCapacidadEsperado(3); a3_1.setCalificacionActual("N");
-        Actividad a3_2 = new Actividad(); a3_2.setPractica(pract03); a3_2.setDescripcionActividad("Revisar las métricas de mitigación de vulnerabilidades descubiertas en el firmware del Arene OS."); a3_2.setNivelCapacidadEsperado(4); a3_2.setCalificacionActual("N");
-        pract03.setActividades(Arrays.asList(a3_1, a3_2));
+        pract03.setDescripcionPractica("Monitorizar los objetivos clave y las métricas de los procesos de gestión de riesgos. Establecer cómo se identificarán, se hará seguimiento y se notificarán las desviaciones o los problemas.");
+
+        Actividad a3_1 = new Actividad(); a3_1.setPractica(pract03); a3_1.setDescripcionActividad("Reportar cualquier problema de gestión de riesgo a la junta directiva y al comité ejecutivo de manera oportuna."); a3_1.setNivelCapacidadEsperado(2); a3_1.setCalificacionActual("N");
+        Actividad a3_2 = new Actividad(); a3_2.setPractica(pract03); a3_2.setDescripcionActividad("Monitorizar el grado en el que el perfil de riesgo de la empresa se mantiene dentro de los límites de apetito y tolerancia establecidos."); a3_2.setNivelCapacidadEsperado(2); a3_2.setCalificacionActual("N");
+        Actividad a3_3 = new Actividad(); a3_3.setPractica(pract03); a3_3.setDescripcionActividad("Asegurar la presentación de informes oportunos, exactos y completos sobre el estado del riesgo a los actores interesados."); a3_3.setNivelCapacidadEsperado(3); a3_3.setCalificacionActual("N");
+        Actividad a3_4 = new Actividad(); a3_4.setPractica(pract03); a3_4.setDescripcionActividad("Evaluar periódicamente el desempeño y eficacia de las prácticas de gestión del riesgo y realizar mejoras de manera continua."); a3_4.setNivelCapacidadEsperado(4); a3_4.setCalificacionActual("N");
+        pract03.setActividades(Arrays.asList(a3_1, a3_2, a3_3, a3_4));
 
         compA.setPracticas(Arrays.asList(pract01, pract02, pract03));
         edm03.setComponenteA_Procesos(Arrays.asList(compA));
