@@ -117,95 +117,107 @@ public class Seeder01_EDM implements CommandLineRunner {
 
     private void cargarEDM02() {
         // ==========================================
-        // INFORMACIÓN GENERAL Y CASCADA DE METAS (Contexto Toyota mantenido)
+        // INFORMACIÓN GENERAL (COBIT 2019 OFICIAL)
         // ==========================================
         ProcesoCobit edm02 = new ProcesoCobit();
         edm02.setIdProceso("EDM02");
         edm02.setDominio("Evaluar, Dirigir y Monitorizar");
         edm02.setAreaPrioritaria("Modelo Core de COBIT");
-        edm02.setNombreProceso("Asegurar la entrega de beneficios");
-        edm02.setDescripcionProceso("Optimizar el valor que la TI aporta al negocio a partir de las inversiones y los servicios de TI a un costo aceptable.");
-        edm02.setPropositoProceso("Asegurar que la millonaria inversión en infraestructura Cloud (AWS) y desarrollo del Arene OS genere un Retorno de Inversión (ROI) tangible para Toyota, habilitando nuevos modelos de monetización por software.");
+        edm02.setNombreProceso("Asegurar la obtención de beneficios");
+        edm02.setDescripcionProceso("Optimizar el valor al negocio de las inversiones en procesos empresariales, servicios de I&T y activos de I&T.");
+        edm02.setPropositoProceso("Asegurar un valor óptimo de las iniciativas, servicios y activos habilitados para I&T; la entrega rentable de soluciones y servicios; y una imagen confiable y precisa de los costes y beneficios probables para que las necesidades empresariales se satisfagan de forma eficaz y eficiente.");
 
-        edm02.setMetasAlineamiento("AG03: Realización de beneficios del portafolio de inversiones y servicios relacionados con la TI.\nAG05: Entrega de servicios de TI acorde a los requisitos del negocio (Disponibilidad OTA).");
-        edm02.setMetasEmpresariales("EG05: Cultura de innovación orientada al cliente (Nuevas funcionalidades vehiculares por suscripción).\nEG12: Optimización de costos de procesos de negocio (Reducción de garantías físicas en talleres).");
-        edm02.setMetricasModelo("Métrica 1: Porcentaje de actualizaciones OTA exitosas que evitaron el ingreso del vehículo al taller físico (Ahorro de costos).\nMétrica 2: Retorno de Inversión (ROI) anual de la plataforma de suscripción de software Arene OS.");
+        edm02.setMetasAlineamiento("AG03: Beneficios obtenidos del portafolio de inversiones y servicios habilitados por I&T.");
+        edm02.setMetasEmpresariales("EG08: Optimización de la funcionalidad de procesos internos del negocio.\nEG12: Gestión de programas de transformación digital.");
+        edm02.setMetricasModelo("Métrica 1: Niveles de satisfacción del consejo de administración y la dirección ejecutiva con las capacidades del proceso empresarial (EG08).\nMétrica 2: Porcentaje de inversiones posibilitadas por I&T en las que los beneficios previstos en el caso de negocio se cumplen o exceden (AG03).");
 
         // ==========================================
-        // COMPONENTE A: PROCESOS (TEXTOS OFICIALES COBIT 2019)
+        // COMPONENTE A: PRÁCTICAS Y ACTIVIDADES (OFICIALES)
         // ==========================================
         ComponenteProceso compA = new ComponenteProceso();
         compA.setProceso(edm02);
         compA.setTipoComponente("A");
         compA.setNombreComponente("Procesos");
 
-        // Práctica 01 Oficial
         PracticaCobit pract01 = new PracticaCobit();
         pract01.setComponente(compA);
         pract01.setIdPractica("EDM02.01");
-        pract01.setNombrePractica("Evaluar la optimización del valor");
-        pract01.setDescripcionPractica("Evaluar el portafolio de inversiones, servicios y activos habilitados por la I&T para determinar la probabilidad de alcanzar los objetivos de la empresa y entregar valor a un coste razonable.");
+        pract01.setNombrePractica("Establecer el objetivo de la mezcla de inversión");
+        pract01.setDescripcionPractica("Revisar y asegurarse que las estrategias y los servicios actuales de la empresa y de I&T sean claros. Definir una mezcla de inversión apropiada basada en el coste, la alineación con la estrategia y las medidas financieras.");
+        Actividad a1_1 = new Actividad(); a1_1.setPractica(pract01); a1_1.setDescripcionActividad("Crear y mantener portafolios de programas de inversión habilitados por I&T, servicios y activos de TI, que forman la base para el presupuesto actual."); a1_1.setNivelCapacidadEsperado(2); a1_1.setCalificacionActual("N");
+        Actividad a1_2 = new Actividad(); a1_2.setPractica(pract01); a1_2.setDescripcionActividad("Definir una mezcla de inversión que logre el equilibrio adecuado entre distintas dimensiones, incluido un equilibrio de resultados a corto y largo plazo."); a1_2.setNivelCapacidadEsperado(3); a1_2.setCalificacionActual("N");
+        pract01.setActividades(Arrays.asList(a1_1, a1_2));
 
-        Actividad a1_1 = new Actividad(); a1_1.setPractica(pract01); a1_1.setDescripcionActividad("Entender la dirección estratégica respecto al valor del negocio."); a1_1.setNivelCapacidadEsperado(2); a1_1.setCalificacionActual("N");
-        Actividad a1_2 = new Actividad(); a1_2.setPractica(pract01); a1_2.setDescripcionActividad("Entender el rango y alcance total de las inversiones y servicios habilitados por I&T."); a1_2.setNivelCapacidadEsperado(2); a1_2.setCalificacionActual("N");
-        Actividad a1_3 = new Actividad(); a1_3.setPractica(pract01); a1_3.setDescripcionActividad("Evaluar el alineamiento del portafolio de inversiones y servicios habilitados por I&T con la dirección estratégica."); a1_3.setNivelCapacidadEsperado(3); a1_3.setCalificacionActual("N");
-        Actividad a1_4 = new Actividad(); a1_4.setPractica(pract01); a1_4.setDescripcionActividad("Evaluar los casos de negocio para determinar la probabilidad de que los programas de I&T entreguen el valor esperado."); a1_4.setNivelCapacidadEsperado(4); a1_4.setCalificacionActual("N");
-        pract01.setActividades(Arrays.asList(a1_1, a1_2, a1_3, a1_4));
-
-        // Práctica 02 Oficial
         PracticaCobit pract02 = new PracticaCobit();
         pract02.setComponente(compA);
         pract02.setIdPractica("EDM02.02");
-        pract02.setNombrePractica("Dirigir la optimización del valor");
-        pract02.setDescripcionPractica("Dirigir los principios y prácticas de gestión del valor para permitir la realización de un valor óptimo a partir de las inversiones habilitadas por I&T a lo largo de todo su ciclo de vida económico.");
+        pract02.setNombrePractica("Evaluar la optimización del valor");
+        pract02.setDescripcionPractica("Evaluar continuamente el portafolio de inversiones, servicios y activos de I&T con el fin de determinar la probabilidad de alcanzar los objetivos de la empresa y proporcionar un valor.");
+        Actividad a2_1 = new Actividad(); a2_1.setPractica(pract02); a2_1.setDescripcionActividad("Conocer los requisitos de las partes interesadas; los problemas estratégicos de I&T; así como la dependencia en I&T."); a2_1.setNivelCapacidadEsperado(2); a2_1.setCalificacionActual("N");
+        Actividad a2_2 = new Actividad(); a2_2.setPractica(pract02); a2_2.setDescripcionActividad("Conocer los elementos clave de gobierno para ofrecer de forma confiable, segura y económica un valor óptimo."); a2_2.setNivelCapacidadEsperado(3); a2_2.setCalificacionActual("N");
+        Actividad a2_3 = new Actividad(); a2_3.setPractica(pract02); a2_3.setDescripcionActividad("Evaluar la eficacia con la que las estrategias empresariales y de I&T se han integrado y alineado dentro de la empresa."); a2_3.setNivelCapacidadEsperado(4); a2_3.setCalificacionActual("N");
+        pract02.setActividades(Arrays.asList(a2_1, a2_2, a2_3));
 
-        Actividad a2_1 = new Actividad(); a2_1.setPractica(pract02); a2_1.setDescripcionActividad("Dirigir a la gerencia para que considere cambios potenciales a nivel de toda la empresa con el fin de optimizar el valor."); a2_1.setNivelCapacidadEsperado(2); a2_1.setCalificacionActual("N");
-        Actividad a2_2 = new Actividad(); a2_2.setPractica(pract02); a2_2.setDescripcionActividad("Dirigir a la gerencia para que implemente prácticas de gestión de portafolios, programas y proyectos."); a2_2.setNivelCapacidadEsperado(3); a2_2.setCalificacionActual("N");
-        Actividad a2_3 = new Actividad(); a2_3.setPractica(pract02); a2_3.setDescripcionActividad("Dirigir a la gerencia para que establezca un plan de obtención de beneficios."); a2_3.setNivelCapacidadEsperado(3); a2_3.setCalificacionActual("N");
-        Actividad a2_4 = new Actividad(); a2_4.setPractica(pract02); a2_4.setDescripcionActividad("Recomendar posibles mejoras en la gobernanza y prácticas de gestión de I&T."); a2_4.setNivelCapacidadEsperado(4); a2_4.setCalificacionActual("N");
-        pract02.setActividades(Arrays.asList(a2_1, a2_2, a2_3, a2_4));
-
-        // Práctica 03 Oficial
         PracticaCobit pract03 = new PracticaCobit();
         pract03.setComponente(compA);
         pract03.setIdPractica("EDM02.03");
-        pract03.setNombrePractica("Monitorizar la optimización del valor");
-        pract03.setDescripcionPractica("Monitorizar las métricas y metas clave para determinar en qué medida el negocio está generando el valor esperado a partir de las inversiones relacionadas con la I&T.");
-
-        Actividad a3_1 = new Actividad(); a3_1.setPractica(pract03); a3_1.setDescripcionActividad("Definir un conjunto de métricas para monitorizar los resultados e identificar tendencias."); a3_1.setNivelCapacidadEsperado(2); a3_1.setCalificacionActual("N");
-        Actividad a3_2 = new Actividad(); a3_2.setPractica(pract03); a3_2.setDescripcionActividad("Monitorizar el rendimiento del portafolio de inversiones y de los servicios de I&T respecto a sus objetivos."); a3_2.setNivelCapacidadEsperado(3); a3_2.setCalificacionActual("N");
-        Actividad a3_3 = new Actividad(); a3_3.setPractica(pract03); a3_3.setDescripcionActividad("Monitorizar la implementación de mejoras para optimizar el valor de la I&T."); a3_3.setNivelCapacidadEsperado(4); a3_3.setCalificacionActual("N");
+        pract03.setNombrePractica("Dirigir la optimización del valor");
+        pract03.setDescripcionPractica("Dirigir los principios y las prácticas de gestión de valor para permitir la obtención óptima de valor de las inversiones de I&T durante todo su ciclo de vida económico.");
+        Actividad a3_1 = new Actividad(); a3_1.setPractica(pract03); a3_1.setDescripcionActividad("Definir y comunicar los tipos, categorías, criterios y peso relativo al criterio de portafolio e inversiones que permitan puntajes de valor relativo total."); a3_1.setNivelCapacidadEsperado(2); a3_1.setCalificacionActual("N");
+        Actividad a3_2 = new Actividad(); a3_2.setPractica(pract03); a3_2.setDescripcionActividad("Definir los requisitos para los cambios de fase (stage-gate) y otras revisiones para ver el peso de la inversión para la empresa."); a3_2.setNivelCapacidadEsperado(3); a3_2.setCalificacionActual("N");
+        Actividad a3_3 = new Actividad(); a3_3.setPractica(pract03); a3_3.setDescripcionActividad("Definir y comunicar las metas y medidas de resultados de la entrega de valor a nivel de empresa para permitir una supervisión eficaz."); a3_3.setNivelCapacidadEsperado(4); a3_3.setCalificacionActual("N");
         pract03.setActividades(Arrays.asList(a3_1, a3_2, a3_3));
 
-        compA.setPracticas(Arrays.asList(pract01, pract02, pract03));
+        PracticaCobit pract04 = new PracticaCobit();
+        pract04.setComponente(compA);
+        pract04.setIdPractica("EDM02.04");
+        pract04.setNombrePractica("Monitorizar la optimización del valor");
+        pract04.setDescripcionPractica("Supervisar las metas y métricas clave para determinar si el negocio está recibiendo el valor y los beneficios esperados a través de las inversiones de I&T.");
+        Actividad a4_1 = new Actividad(); a4_1.setPractica(pract04); a4_1.setDescripcionActividad("Definir un conjunto equilibrado de objetivos, métricas, metas y benchmarks. Las métricas deberían cubrir mediciones de actividad y resultados."); a4_1.setNivelCapacidadEsperado(4); a4_1.setCalificacionActual("N");
+        Actividad a4_2 = new Actividad(); a4_2.setPractica(pract04); a4_2.setDescripcionActividad("Una vez revisados los informes, asegurar que se ha iniciado y controlado acciones correctivas al área de gestión pertinente."); a4_2.setNivelCapacidadEsperado(5); a4_2.setCalificacionActual("N");
+        pract04.setActividades(Arrays.asList(a4_1, a4_2));
+
+        compA.setPracticas(Arrays.asList(pract01, pract02, pract03, pract04));
         edm02.setComponenteA_Procesos(Arrays.asList(compA));
 
         // ==========================================
-        // COMPONENTES RESTANTES (Contexto Toyota mantenido)
+        // COMPONENTE B: ESTRUCTURAS ORGANIZATIVAS
         // ==========================================
-        MatrizRaci raci1 = new MatrizRaci(); raci1.setProceso(edm02); raci1.setPracticaGestion("EDM02.01"); raci1.setRolOrganizacional("Director Financiero (CFO)"); raci1.setNivelResponsabilidad("A");
-        MatrizRaci raci2 = new MatrizRaci(); raci2.setProceso(edm02); raci2.setPracticaGestion("EDM02.01"); raci2.setRolOrganizacional("Gerente de Estrategia Digital"); raci2.setNivelResponsabilidad("R");
-        MatrizRaci raci3 = new MatrizRaci(); raci3.setProceso(edm02); raci3.setPracticaGestion("EDM02.02"); raci3.setRolOrganizacional("Comité de Inversiones"); raci3.setNivelResponsabilidad("A");
-        MatrizRaci raci4 = new MatrizRaci(); raci4.setProceso(edm02); raci4.setPracticaGestion("EDM02.03"); raci4.setRolOrganizacional("Especialista FinOps (Cloud)"); raci4.setNivelResponsabilidad("R");
-        edm02.setComponenteB_Raci(Arrays.asList(raci1, raci2, raci3, raci4));
+        MatrizRaci raci1 = new MatrizRaci(); raci1.setProceso(edm02); raci1.setPracticaGestion("EDM02.01"); raci1.setRolOrganizacional("Consejo de Administración"); raci1.setNivelResponsabilidad("A");
+        MatrizRaci raci2 = new MatrizRaci(); raci2.setProceso(edm02); raci2.setPracticaGestion("EDM02.02"); raci2.setRolOrganizacional("Director general ejecutivo (CEO)"); raci2.setNivelResponsabilidad("R");
+        MatrizRaci raci3 = new MatrizRaci(); raci3.setProceso(edm02); raci3.setPracticaGestion("EDM02.04"); raci3.setRolOrganizacional("Consejo de gobierno de I&T"); raci3.setNivelResponsabilidad("R");
+        edm02.setComponenteB_Raci(Arrays.asList(raci1, raci2, raci3));
 
-        FlujoInformacion flujo1 = new FlujoInformacion(); flujo1.setProceso(edm02); flujo1.setPracticaGestion("EDM02.01"); flujo1.setTipoFlujo("ENTRADA"); flujo1.setOrigenDestino("DE: APO05.02"); flujo1.setDescripcion("Casos de negocio y estudios de viabilidad de nuevos servicios OTA");
-        FlujoInformacion flujo2 = new FlujoInformacion(); flujo2.setProceso(edm02); flujo2.setPracticaGestion("EDM02.02"); flujo2.setTipoFlujo("SALIDA"); flujo2.setOrigenDestino("A: APO05.03"); flujo2.setDescripcion("Directrices de presupuestación aprobadas para infraestructura AWS");
-        FlujoInformacion flujo3 = new FlujoInformacion(); flujo3.setProceso(edm02); flujo3.setPracticaGestion("EDM02.03"); flujo3.setTipoFlujo("ENTRADA"); flujo3.setOrigenDestino("DE: MEA01.03"); flujo3.setDescripcion("Informes de rendimiento y consumo de recursos Cloud");
-        edm02.setComponenteC_Flujos(Arrays.asList(flujo1, flujo2, flujo3));
+        // ==========================================
+        // COMPONENTE C: FLUJOS DE INFORMACIÓN
+        // ==========================================
+        FlujoInformacion flujo1 = new FlujoInformacion(); flujo1.setProceso(edm02); flujo1.setPracticaGestion("EDM02.01"); flujo1.setTipoFlujo("ENTRADA"); flujo1.setOrigenDestino("DE: APO02.05"); flujo1.setDescripcion("Definición de iniciativas estratégicas, iniciativas de evaluación de riesgos y Hoja de ruta estratégica.");
+        FlujoInformacion flujo2 = new FlujoInformacion(); flujo2.setProceso(edm02); flujo2.setPracticaGestion("EDM02.02"); flujo2.setTipoFlujo("SALIDA"); flujo2.setOrigenDestino("A: APO05.02 / APO05.03"); flujo2.setDescripcion("Evaluación de los portafolios de inversiones y servicios.");
+        edm02.setComponenteC_Flujos(Arrays.asList(flujo1, flujo2));
 
-        Habilidad hab1 = new Habilidad(); hab1.setProceso(edm02); hab1.setNombreHabilidad("Gestión Financiera de TI (Cloud FinOps)"); hab1.setDocumentacionRelacionada("Marco de Competencias SFIA v8"); hab1.setReferenciaEspecifica("Gestión Financiera (FING) - Nivel 5");
-        Habilidad hab2 = new Habilidad(); hab2.setProceso(edm02); hab2.setNombreHabilidad("Gestión de Beneficios / Valor"); hab2.setDocumentacionRelacionada("PMBOK / ITIL v4"); hab2.setReferenciaEspecifica("Práctica de Gestión de Portafolios");
-        edm02.setComponenteD_Habilidades(Arrays.asList(hab1, hab2));
+        // ==========================================
+        // COMPONENTE D: HABILIDADES PROFESIONALES
+        // ==========================================
+        Habilidad hab1 = new Habilidad(); hab1.setProceso(edm02); hab1.setNombreHabilidad("Benefits management (Gestión de Beneficios)"); hab1.setDocumentacionRelacionada("Skills Framework for the Information Age V6, 2015"); hab1.setReferenciaEspecifica("Identificador: BENM. Capacidades para administrar y asegurar el retorno de inversión.");
+        edm02.setComponenteD_Habilidades(Arrays.asList(hab1));
 
-        Politica pol1 = new Politica(); pol1.setProceso(edm02); pol1.setTituloPolitica("Política de Optimización de Costos Cloud (FinOps)"); pol1.setDescripcionPolitica("Obliga a justificar financieramente el tamaño de los paquetes de actualización OTA enviados a la flota para minimizar el costo por GigaByte en AWS."); pol1.setDocumentacionRelacionada("Manual de Operaciones IT de Toyota"); pol1.setReferenciaEspecifica("Capítulo: Gestión de Inversiones Digitales");
+        // ==========================================
+        // COMPONENTE E: POLÍTICAS INSTITUCIONALES
+        // ==========================================
+        Politica pol1 = new Politica(); pol1.setProceso(edm02); pol1.setTituloPolitica("Política de elaboración y ejecución de presupuestos"); pol1.setDescripcionPolitica("Establece las directrices para identificar las necesidades y requisitos de las inversiones, monitorizar su cumplimiento y asegurar el máximo beneficio. Aborda la formulación de solicitudes presupuestarias."); pol1.setDocumentacionRelacionada("Gobierno Financiero Corporativo"); pol1.setReferenciaEspecifica("Supervisar la ejecución del rendimiento presupuestario y técnico conforme a lo estimado, y en relación a los acuerdos de nivel de servicio.");
         edm02.setComponenteE_Politicas(Arrays.asList(pol1));
 
-        Cultura cult1 = new Cultura(); cult1.setProceso(edm02); cult1.setElementoCultural("Cultura de Conciencia de Costos (Cost-Awareness)"); cult1.setDocumentacionRelacionada("Manifiesto FinOps Corporativo"); cult1.setReferenciaEspecifica("Inculcar en los desarrolladores que código ineficiente se traduce en facturas de nube más altas.");
+        // ==========================================
+        // COMPONENTE F: CULTURA DE TRABAJO
+        // ==========================================
+        Cultura cult1 = new Cultura(); cult1.setProceso(edm02); cult1.setElementoCultural("Cultura de Alineamiento Estratégico y Entrega de Valor"); cult1.setDocumentacionRelacionada("Manifiesto de Valor de I&T"); cult1.setReferenciaEspecifica("El valor que I&T proporciona depende del grado de alineamiento de I&T con el negocio. Optimizar el valor de I&T estableciendo una cultura en la que los servicios se proporcionen a tiempo, dentro del presupuesto y con la calidad adecuada.");
         edm02.setComponenteF_Cultura(Arrays.asList(cult1));
 
-        Servicio serv1 = new Servicio(); serv1.setProceso(edm02); serv1.setNombreServicioHerramienta("AWS Cost Explorer y AWS Budgets");
-        Servicio serv2 = new Servicio(); serv2.setProceso(edm02); serv2.setNombreServicioHerramienta("Software de Gestión de Portafolio y Proyectos (PPM)");
+        // ==========================================
+        // COMPONENTE G: SERVICIOS Y HERRAMIENTAS
+        // ==========================================
+        Servicio serv1 = new Servicio(); serv1.setProceso(edm02); serv1.setNombreServicioHerramienta("Sistema de contabilidad de costes");
+        Servicio serv2 = new Servicio(); serv2.setProceso(edm02); serv2.setNombreServicioHerramienta("Herramienta de gestión de programas y portafolio");
         edm02.setComponenteG_Servicios(Arrays.asList(serv1, serv2));
 
         procesoRepository.save(edm02);
