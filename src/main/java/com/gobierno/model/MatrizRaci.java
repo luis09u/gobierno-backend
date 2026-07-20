@@ -14,11 +14,14 @@ public class MatrizRaci {
     @JsonBackReference
     private ProcesoCobit proceso;
 
-    private String practicaGestion; // Ej: "EDM01.01"
-    private String rolOrganizacional; // Ej: "CIO", "Comité de Estrategia"
+    @Column(columnDefinition = "TEXT")
+    private String practicaGestion;
+
+    @Column(columnDefinition = "TEXT")
+    private String rolOrganizacional;
 
     @Column(length = 1)
-    private String nivelResponsabilidad; // "R" (Responsible), "A" (Accountable), "C" (Consulted), "I" (Informed)
+    private String nivelResponsabilidad;
 
     public Long getIdRaci() {
         return idRaci;

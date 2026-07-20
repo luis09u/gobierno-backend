@@ -14,6 +14,7 @@ public class Servicio {
     @JsonBackReference
     private ProcesoCobit proceso;
 
+    @Column(columnDefinition = "TEXT")
     private String nombreServicioHerramienta;
 
     public Long getIdServicio() {

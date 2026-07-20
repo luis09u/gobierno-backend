@@ -15,6 +15,7 @@ public class FactorDiseno {
     @Column(columnDefinition = "TEXT")
     private String descripcionGeneral;
 
+    @Column(columnDefinition = "TEXT")
     private String dimensionSeleccionada;
 
     @Column(columnDefinition = "TEXT")

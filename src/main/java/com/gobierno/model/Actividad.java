@@ -13,12 +13,13 @@ public class Actividad {
 
     @ManyToOne
     @JoinColumn(name = "id_practica")
-    @JsonBackReference // <-- CORTA EL BUCLE FINAL
+    @JsonBackReference
     private PracticaCobit practica;
 
     @Column(columnDefinition = "TEXT")
     private String descripcionActividad;
 
+    @Column(columnDefinition = "TEXT")
     private int nivelCapacidadEsperado;
 
     @Column(length = 1, columnDefinition = "VARCHAR(1) DEFAULT 'N'")

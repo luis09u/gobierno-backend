@@ -19,7 +19,10 @@ public class Politica {
     @Column(columnDefinition = "TEXT")
     private String descripcionPolitica;
 
+    @Column(columnDefinition = "TEXT")
     private String documentacionRelacionada;
+
+    @Column(columnDefinition = "TEXT")
     private String referenciaEspecifica;
 
     public String getDescripcionPolitica() {

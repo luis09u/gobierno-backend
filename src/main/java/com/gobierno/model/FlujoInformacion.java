@@ -14,13 +14,17 @@ public class FlujoInformacion {
     @JsonBackReference
     private ProcesoCobit proceso;
 
-    private String practicaGestion; // Ej: "EDM01.01"
-    private String tipoFlujo; // "ENTRADA" o "SALIDA"
+    @Column(columnDefinition = "TEXT")
+    private String practicaGestion;
+
+    @Column(columnDefinition = "TEXT")
+    private String tipoFlujo;
 
     @Column(columnDefinition = "TEXT")
     private String descripcion;
 
-    private String origenDestino; // "DE: [Práctica]" o "A: [Práctica/Interna]"
+    @Column(columnDefinition = "TEXT")
+    private String origenDestino;
 
     public String getDescripcion() {
         return descripcion;

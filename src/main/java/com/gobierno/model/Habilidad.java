@@ -17,7 +17,11 @@ public class Habilidad {
 
     @Column(columnDefinition = "TEXT")
     private String nombreHabilidad;
+
+    @Column(columnDefinition = "TEXT")
     private String documentacionRelacionada;
+
+    @Column(columnDefinition = "TEXT")
     private String referenciaEspecifica;
 
     public String getDocumentacionRelacionada() {

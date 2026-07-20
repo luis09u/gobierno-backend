@@ -21,6 +21,7 @@ public class ComponenteProceso {
     @Column(length = 1)
     private String tipoComponente;
 
+    @Column(columnDefinition = "TEXT")
     private String nombreComponente;
 
     @Column(columnDefinition = "TEXT")

@@ -15,7 +15,7 @@ public class PracticaCobit {
 
     @ManyToOne
     @JoinColumn(name = "id_comp_proceso")
-    @JsonBackReference // <-- CORTA EL BUCLE
+    @JsonBackReference
     private ComponenteProceso componente;
 
     private String nombrePractica;
@@ -24,7 +24,7 @@ public class PracticaCobit {
     private String descripcionPractica;
 
     @OneToMany(mappedBy = "practica", cascade = CascadeType.ALL)
-    @JsonManagedReference // <-- CONTROLA EL BUCLE HACIA ABAJO
+    @JsonManagedReference
     private List<Actividad> actividades;
 
     // Genera o pega tus Getters y Setters aquí...

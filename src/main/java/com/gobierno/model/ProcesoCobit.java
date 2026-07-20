@@ -10,11 +10,10 @@ public class ProcesoCobit {
 
     @Id
     @Column(name = "id_proceso", length = 10)
-    private String idProceso; // Ej: "EDM01"
+    private String idProceso;
 
-    // --- INFORMACIÓN GENERAL ---
     private String dominio;
-    private String areaPrioritaria; // Ej: "Modelo core de COBIT"
+    private String areaPrioritaria;
     private String nombreProceso;
 
     @Column(columnDefinition = "TEXT")
@@ -23,9 +22,8 @@ public class ProcesoCobit {
     @Column(columnDefinition = "TEXT")
     private String propositoProceso;
 
-    // --- CASCADA DE METAS ---
     @Column(columnDefinition = "TEXT")
-    private String metasAlineamiento; // Podemos guardar listas separadas por saltos de línea (\n)
+    private String metasAlineamiento;
 
     @Column(columnDefinition = "TEXT")
     private String metasEmpresariales;
@@ -33,39 +31,30 @@ public class ProcesoCobit {
     @Column(columnDefinition = "TEXT")
     private String metricasModelo;
 
-    // --- COMPONENTES RELACIONADOS (A - G) ---
-
-    // A. Procesos (Las prácticas y actividades que ya tenemos)
     @OneToMany(mappedBy = "proceso", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<ComponenteProceso> componenteA_Procesos;
 
-    // B. Estructuras Organizativas (RACI)
     @OneToMany(mappedBy = "proceso", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<MatrizRaci> componenteB_Raci;
 
-    // C. Flujos y Elementos de Información
     @OneToMany(mappedBy = "proceso", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<FlujoInformacion> componenteC_Flujos;
 
-    // D. Personas, Habilidades y Competencias
     @OneToMany(mappedBy = "proceso", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Habilidad> componenteD_Habilidades;
 
-    // E. Políticas y Procedimientos
     @OneToMany(mappedBy = "proceso", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Politica> componenteE_Politicas;
 
-    // F. Cultura, Ética y Comportamiento
     @OneToMany(mappedBy = "proceso", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Cultura> componenteF_Cultura;
 
-    // G. Servicios, Infraestructura y Aplicaciones
     @OneToMany(mappedBy = "proceso", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Servicio> componenteG_Servicios;
